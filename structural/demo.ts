@@ -1,6 +1,8 @@
-import { EmailClient } from "./adapter/EmailClient";
-import { GmailAdapter } from "./adapter/GmailAdapter";
+import { EmailClient } from './adapter/EmailClient';
+import { GmailAdapter } from './adapter/GmailAdapter';
 
-var client = new EmailClient();
-client.addProvider(new GmailAdapter());
-client.downloadEmails();
+function demoAdapter() {
+  var client = new EmailClient();
+  client.addProvider(new GmailAdapter());
+  client.downloadEmails();
+}
