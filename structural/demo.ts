@@ -3,6 +3,7 @@ import { GmailAdapter } from './adapter/GmailAdapter';
 import { CloudStream } from './decorator/CloudStream';
 import { CompressedCloudStream } from './decorator/CompressedCloudStream';
 import { EncryptedCloudStream } from './decorator/EncryptedCloudStream';
+import { NotificationService } from './facade/NotificationService';
 
 function demoAdapter() {
   var client = new EmailClient();
@@ -17,4 +18,8 @@ function demoDecorator() {
   );
 }
 
-demoDecorator();
+function demoFacadePattern() {
+  const service = new NotificationService();
+  service.send('Hello Ali', 'target');
+}
+demoFacadePattern();
